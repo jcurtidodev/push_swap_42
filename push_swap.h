@@ -25,7 +25,8 @@ typedef struct s_num
 }	t_num;
 
 // Executable utils
-void	print_stack(t_num **stack, int size);// to delete
+void	print_stack(t_num **stack, int size);// TO DELETE
+//int   return_free_error(t_num **stack, char *message, int size); // TO IMPLEMENT AT MAIN
 void	free_stack(t_num **stack, int i);
 t_num	**create_stack(int len);
 size_t	parse_numbers(int argc, char *argv[], t_num **stack);
@@ -41,8 +42,8 @@ size_t	manage_index(t_num **stack, int size);
 void	print_move(void);// pendiente
 
 // Ordenation
-void	sort_small_stack(t_num **stack_a, t_num **stack_b);// pendiente
-void	sort_big_stack(t_num **stack_a, t_num **stack_b);// pendiente
+//void	sort_small_stack(t_num **stack_a, t_num **stack_b);// pendiente
+//void	sort_big_stack(t_num **stack_a, t_num **stack_b);// pendiente
 void	push_swap(t_num **stack, int size);//pendiente
 
 // Movements
