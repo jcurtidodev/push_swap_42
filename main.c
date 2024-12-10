@@ -37,6 +37,5 @@ int	main(int argc, char *argv[])
 	if (sorted)
 		return (free_stack(stack, argc - 1), ft_printf("The numbers are sorted\n"), 1);
 	push_swap(stack, argc - 1);
-	free_stack(stack, argc - 1);
 	return (0);
 }
