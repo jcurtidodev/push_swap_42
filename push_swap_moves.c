@@ -39,6 +39,7 @@ void	rotate(t_num **stack, int size)
 	while (i < size - 1)
 	{
 		*stack[i]->num = *stack[i + 1]->num;
+                *stack[i]->index = *stack[i + 1]->index;
 		i++;
 	}
 	*stack[i]->num = temp_nb;
@@ -75,9 +76,9 @@ void	push_from_to(t_num **stack_1, t_num **stack_2, int size)
 		return ;
 	i = 0;
 	j = size - 1;
-	while (stack_1[i]->num == NULL && i <= size - 1)
+	while (stack_1[i]->num == NULL && i < size - 1)
 		i++;
-	while (stack_2[j]->num != NULL && j >= 0)
+	while (stack_2[j]->num != NULL && j > 0)
 		j--;
 	stack_2[j]->num = malloc(sizeof(int));
 	stack_2[j]->index = malloc(sizeof(unsigned int));
