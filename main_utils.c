@@ -29,28 +29,26 @@ void	print_stack(t_num **stack, int size)
 
 void	free_stack(t_num **stack, int len)
 {
-	int	i;
+        if (!stack)
+                return ;
+        while (size >= 0)
+        {
+                if (stack[size])
+                {
+                        if (stack[size]->num)
+                                free(stack[size]->num);
+                        if (stack[size]->index)
+                                free(stack[size]->index);
+                        stack[size]->num = NULL;
+                        stack[size]->index = NULL;
+                        free(stack[size]);
+                        stack[size] = NULL;
+                }
+        	size--;
+        }
+        free(stack);
+	stack = NULL;
 
-	if (!stack)
-		return ;
-	i = 0;
-	while (i < len)
-	{
-		if (stack[i])
-		{
-			if (stack[i]->num)
-				free(stack[i]->num);
-			if (stack[i]->index)
-				free(stack[i]->index);
-			stack[i]->num = NULL;
-			stack[i]->index = NULL;
-			free(stack[i]);
-			stack[i] = NULL;
-		}
-		i++;
-	}
-	free(*stack);
-	*stack = NULL;
 }
 
 t_num	**create_stack(int len)
