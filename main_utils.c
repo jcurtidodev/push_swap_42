@@ -19,11 +19,16 @@ void	print_stack(t_num **stack, int size)
 	int	i = 0;
 	while (i < size)
 	{
-		if (stack[i]->num == NULL)
-			ft_printf("|||| stack[%d] = NULL ||||\n", i);
-		else
-			ft_printf("|||| stack[%d] = %d ||||\n", i, *stack[i]->num);
-		i++;
+                if (stack[i]->num == NULL)
+                        ft_printf("|||| stack[%d]->num = NULL ||||\n", i);
+                else
+                        ft_printf("|||| stack[%d]->num = %d ||||\n", i, *stack[i]->num);
+                if (stack[i]->index == NULL)
+                        ft_printf("|||| stack[%d]->index = NULL ||||\n\n", i);
+                else
+                        ft_printf("|||| stack[%d]->index = %d ||||\n\n", i, *stack[i]->index);
+                i++;
+
 	}
 }
 
