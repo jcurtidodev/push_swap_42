@@ -148,3 +148,6 @@ El proceso se repite para cada bit hasta que todos los elementos estén ordenado
 Este proceso continúa hasta que se hayan procesado todos los bits (hasta el `max_bits` definido).
 
 Este enfoque es eficiente para ordenar los elementos en función de sus bits, y garantiza que los números se ordenen de manera estable sin necesidad de comparar directamente los valores.
+
+## 🤝 Créditos
+Proyecto desarrollado por `jcurtidodev` como parte del cursus de **42 School**.
