@@ -98,35 +98,53 @@ Radix Sort trabaja en varias etapas:
 
 **Ejemplo de ordenación con Radix Sort**:
 
-Supongamos que tenemos los siguientes números:
+Supongamos que tenemos los siguientes números:  
 `[170, 45, 75, 90, 802, 24, 2, 66]`.
 
 Radix Sort los ordenaría en las siguientes etapas:
 
-1. **Primera fase**: Ordenar por el primer dígito (las unidades):
-    [170, 90, 802, 2, 45, 75, 24, 66]
+1. **Primera fase**: Ordenar por el primer dígito (las unidades):  
+    `[170, 90, 802, 2, 45, 75, 24, 66]`
 
-2. **Segunda fase**: Ordenar por el segundo dígito (las decenas):
-    [802, 2, 24, 45, 66, 170, 75, 90]
+2. **Segunda fase**: Ordenar por el segundo dígito (las decenas):  
+    `[802, 2, 24, 45, 66, 170, 75, 90]`
 
-    Tercera fase: Ordenar por el tercer dígito (las centenas):
-    [2, 24, 45, 66, 75, 90, 170, 802]
+3. **Tercera fase**: Ordenar por el tercer dígito (las centenas):  
+    `[2, 24, 45, 66, 75, 90, 170, 802]`
 
-Al final, los números están ordenados:
-[2, 24, 45, 66, 75, 90, 170, 802].
-🎨 Características y Ventajas
+Al final, los números están ordenados:  
+`[2, 24, 45, 66, 75, 90, 170, 802]`.
+## 🎨 Características y Ventajas
 
-    No comparativo: A diferencia de algoritmos como quicksort o mergesort, radix sort no compara los elementos entre sí, lo que le permite trabajar de manera eficiente en casos donde los números tienen muchas cifras.
-    Estabilidad: Radix sort es un algoritmo estable, lo que significa que si dos elementos tienen el mismo valor en el dígito actual, su orden relativo no cambiará.
-    Eficiencia en ciertos casos: Para listas de números con un rango de valores pequeño o números con pocos dígitos (como en algunos proyectos de 42), Radix Sort puede ser más eficiente que otros algoritmos como quicksort, ya que la complejidad temporal es lineal en función del número de dígitos.
+- **No comparativo**: A diferencia de algoritmos como _quicksort_ o _mergesort_, **radix sort** no compara los elementos entre sí, lo que le permite trabajar de manera eficiente en casos donde los números tienen muchas cifras.
+- **Estabilidad**: Radix sort es un algoritmo estable, lo que significa que si dos elementos tienen el mismo valor en el dígito actual, su orden relativo no cambiará.
+- **Eficiencia en ciertos casos**: Para listas de números con un rango de valores pequeño o números con pocos dígitos, **Radix Sort** puede ser más eficiente que otros algoritmos como quicksort, ya que la complejidad temporal es lineal en función del número de dígitos.
 
-🛠️ Complejidad Temporal
+## 🛠️ Complejidad Temporal
 
-    Mejor caso, peor caso, caso promedio: O(k * n), donde:
-        n es el número de elementos en el array.
-        k es el número de dígitos en el número más grande.
+**Mejor caso, peor caso, caso promedio**: O(k * n), donde:
+- **n** es el número de elementos en el array.
+- **k** es el número de dígitos en el número más grande.
 
-El valor de k depende de la magnitud de los números que se están ordenando. A diferencia de otros algoritmos de ordenación como quicksort (O(n log n)), Radix Sort puede ser muy eficiente si k es pequeño.
-🔧 Implementación de Radix Sort
+El valor de **k** depende de la magnitud de los números que se están ordenando. A diferencia de otros algoritmos de ordenación como quicksort (O(n log n)), **Radix Sort** puede ser muy eficiente si **k** es pequeño.
 
-Radix Sort se suele implementar utilizando una técnica de ordenación estable como counting sort para ordenar los números por sus dígitos. Esto asegura que el orden de los números con el mismo valor en un dígito no cambie durante las iteraciones.
+## 🔧 Implementación de Radix Sort
+
+Radix Sort se puede implementar utilizando un enfoque de **ordenación por bits**. En el caso de esta implementación, el algoritmo recorre los números de la pila (`stack_a`) bit por bit, comenzando por el bit menos significativo y utilizando el valor de cada bit para decidir si un número debe rotar dentro de su pila o si debe ser movido a la pila auxiliar (`stack_b`).
+
+El proceso se repite para cada bit hasta que todos los elementos estén ordenados.
+
+1. En cada iteración, el bit actual de cada número se examina utilizando una operación de desplazamiento de bits (`>>`) y una operación **AND** con **1** para verificar si el bit es `1` o `0`.
+
+
+3. Si el bit es `1`, el número se rota dentro de la pila `stack_a`.  
+
+
+4. Si el bit es `0`, el número se mueve a la pila auxiliar `stack_b` con el controlador `c_push`.  
+
+
+5. Una vez que se han procesado todos los números en `stack_a` para el bit actual, todos los números en `stack_b` se devuelven a `stack_a` con más operaciones de `c_push`.  
+
+Este proceso continúa hasta que se hayan procesado todos los bits (hasta el `max_bits` definido).
+
+Este enfoque es eficiente para ordenar los elementos en función de sus bits, y garantiza que los números se ordenen de manera estable sin necesidad de comparar directamente los valores.
