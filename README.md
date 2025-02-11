@@ -134,6 +134,9 @@ Radix Sort se puede implementar utilizando un enfoque de **ordenación por bits*
 
 El proceso se repite para cada bit hasta que todos los elementos estén ordenados.
 
+## 🤝 Créditos
+Proyecto desarrollado por `jcurtidodev` como parte del cursus de **42 School**.
+
 1. En cada iteración, el bit actual de cada número se examina utilizando una operación de desplazamiento de bits (`>>`) y una operación **AND** con **1** para verificar si el bit es `1` o `0`.
 
 
