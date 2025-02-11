@@ -81,7 +81,7 @@ Este ejemplo ordenará la pila a de menor a mayor. El programa mostrará una lis
 - Durante la evaluación se comparará el número de instrucciones generadas con un límite máximo de operaciones.
 - Si no se especifican parámetros o si hay errores (como argumentos no enteros, duplicados o fuera de rango), el programa deberá mostrar Error seguido de un salto de línea y terminar correctamente.
 
-# 📚 Método de Ordenación por Radices utilizado - Radix Sort
+# 📚 Método de Ordenación utilizado - Radix Sort
 ## 📌 ¿Qué es Radix Sort?
 
 **Radix Sort** es un algoritmo de ordenación que organiza los números (o cadenas de texto) basándose en sus dígitos o caracteres, procesando un dígito a la vez. Es un algoritmo no comparativo, lo que significa que no realiza comparaciones directas entre los elementos como otros algoritmos como el **quicksort** o **merge sort**. En cambio, se enfoca en los valores de los dígitos de los números, comenzando desde el dígito menos significativo (el de las unidades) hasta el más significativo.
