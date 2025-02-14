@@ -31,7 +31,7 @@ Una vez clones `push_swap`, debes clonar `libft` dentro del repositorio para que
 
 📂 push_swap/
 ```bash
-git clone https://github.com/jcurtidodev/libft-42.git
+git clone https://github.com/jcurtidodev/libft-42.git libft
 ```
 Una vez hecho, continua con:
 ```bash
