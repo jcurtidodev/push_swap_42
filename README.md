@@ -25,8 +25,14 @@ Bienvenido a push_swap, un programa diseñado para ordenar una lista de números
 - **libft**: Este proyecto utiliza la biblioteca libft para funciones estándar de C.
 
 ## 🖥️ Compilación e Instalación
-⚠️ **IMPORTANTE** ⚠️
-Una vez clones `push_swap`, debes clonar `libft` dentro del repositorio para que funcione.  
+> ⚠️ **Precaución**
+> 
+> Este proyecto está diseñado para compilarse y ejecutarse en un entorno **Linux**.  
+> Si trabajas desde Windows, asegúrate de usar **WSL (Windows Subsystem for Linux)** 
+> (o una máquina virtual) con los paquetes necesarios para hacer `cc` con flags y `make`.  
+> Otras plataformas (macOS, etc.) no están garantizadas y pueden requerir adaptaciones adicionales.
+
+> ⚠️ Una vez clones `push_swap`, debes clonar `libft` dentro del repositorio para que funcione.  
 
 
 📂 push_swap/
